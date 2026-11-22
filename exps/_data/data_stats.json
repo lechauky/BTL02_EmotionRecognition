@@ -1,0 +1,71 @@
+{
+  "mean": 0.5077425837516785,
+  "std": 0.2550089359283447,
+  "image_shape": [
+    48,
+    48
+  ],
+  "train": {
+    "n": 28709,
+    "per_class": {
+      "Angry": 3995,
+      "Disgust": 436,
+      "Fear": 4097,
+      "Happy": 7215,
+      "Sad": 4830,
+      "Surprise": 3171,
+      "Neutral": 4965
+    },
+    "ratio": {
+      "Angry": 0.1392,
+      "Disgust": 0.0152,
+      "Fear": 0.1427,
+      "Happy": 0.2513,
+      "Sad": 0.1682,
+      "Surprise": 0.1105,
+      "Neutral": 0.1729
+    }
+  },
+  "valid": {
+    "n": 3589,
+    "per_class": {
+      "Angry": 467,
+      "Disgust": 56,
+      "Fear": 496,
+      "Happy": 895,
+      "Sad": 653,
+      "Surprise": 415,
+      "Neutral": 607
+    },
+    "ratio": {
+      "Angry": 0.1301,
+      "Disgust": 0.0156,
+      "Fear": 0.1382,
+      "Happy": 0.2494,
+      "Sad": 0.1819,
+      "Surprise": 0.1156,
+      "Neutral": 0.1691
+    }
+  },
+  "test": {
+    "n": 3589,
+    "per_class": {
+      "Angry": 491,
+      "Disgust": 55,
+      "Fear": 528,
+      "Happy": 879,
+      "Sad": 594,
+      "Surprise": 416,
+      "Neutral": 626
+    },
+    "ratio": {
+      "Angry": 0.1368,
+      "Disgust": 0.0153,
+      "Fear": 0.1471,
+      "Happy": 0.2449,
+      "Sad": 0.1655,
+      "Surprise": 0.1159,
+      "Neutral": 0.1744
+    }
+  }
+}

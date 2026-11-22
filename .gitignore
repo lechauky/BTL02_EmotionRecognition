@@ -1,0 +1,8 @@
+# dữ liệu (tải từ Kaggle) và trọng số lớn (lưu trên Google Drive)
+data/
+*.pt
+exps/**/checkpoints/
+wandb/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
