@@ -45,7 +45,12 @@ def make_run_dir(key, cfg, author, note=""):
     d = os.path.join(C.EXPS_DIR, group, run_id)
     os.makedirs(os.path.join(d, "figures"), exist_ok=True)
     os.makedirs(os.path.join(d, "checkpoints"), exist_ok=True)
-    version = len(glob.glob(os.path.join(C.EXPS_DIR, group, f"{key}_*", "metrics.json"))) + 1
+    version = 1
+    for mf in glob.glob(os.path.join(C.EXPS_DIR, group, f"{key}_*", "metrics.json")):
+        try:
+            version += 0 if json.load(open(mf)).get("quick") else 1
+        except Exception:
+            pass
     meta = {
         "run_id": run_id, "key": key, "group": group, "group_title": GROUP_TITLES.get(group, ""),
         "version": f"v{version}", "description": EXPERIMENTS.get(key, ("", "", {}))[1],
@@ -128,6 +133,10 @@ def scan():
     df = pd.DataFrame(rows)
     if len(df):
         df = df.sort_values(["start", "run_id"]).reset_index(drop=True)
+        # phiên bản v1, v2, … của mỗi mã chỉ tính các lần chạy chính thức (không tính --quick), theo thứ tự thời gian
+        off = ~df["quick"].astype(bool)
+        df.loc[off, "version"] = "v" + (df[off].groupby("key").cumcount() + 1).astype(str)
+        df.loc[~off, "version"] = "quick"
         df.to_csv(C.REGISTRY_CSV, index=False)
     return df
 
