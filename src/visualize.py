@@ -145,7 +145,11 @@ def plot_feature_maps(model, x_img, mean, std, path, title=""):
     from .models import last_conv
     _, cl = last_conv(model)
     out = {}
-    h = cl.register_forward_hook(lambda m, i, o: out.setdefault("a", o.detach().float().cpu()))
+
+    def keep(m, i, o):                 # hook phải trả về None, nếu không PyTorch sẽ THAY đầu ra của tầng bằng giá trị trả về
+        out["a"] = o.detach().float().cpu()
+
+    h = cl.register_forward_hook(keep)
     p = cl.weight
     t = ((torch.from_numpy(np.ascontiguousarray(x_img)).float() / 255 - float(mean)) / float(std)).reshape(1, 1, *x_img.shape)
     t = t.to(device=p.device, dtype=torch.float32)
