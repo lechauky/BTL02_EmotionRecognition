@@ -49,15 +49,22 @@ def run_one(key, data, args):
         res[s] = (loss, m, y, p)
         open(os.path.join(run_dir, f"classification_report_{s}.txt"), "w").write(m["report_txt"])
     fig = lambda n: os.path.join(run_dir, "figures", n)  # noqa: E731
-    V.plot_history(hist, fig("training_curves.png"), info["best_epoch"], title=meta["run_id"])
-    V.plot_confusion(res["valid"][1]["cm"], fig("confusion_valid.png"), f"{key} – ma trận nhầm lẫn PublicTest (valid)")
-    V.plot_confusion(res["test"][1]["cm"], fig("confusion_test.png"), f"{key} – ma trận nhầm lẫn PrivateTest (test)")
-    V.plot_filters(model, fig("filters_first_conv.png"), fig("filters_last_conv.png"))
-    xt = data["test"][0][: len(res["test"][2])]
-    if cfg["model"] not in ("resnet18", "vgg16bn"):
-        V.plot_feature_maps(model, xt[0], mean, std, fig("feature_maps_last_conv.png"))
-    V.plot_cases(xt, res["test"][2], res["test"][3], fig("wrong_cases.png"), correct=False, title=f"{key} – ca dự đoán SAI (PrivateTest)")
-    V.plot_cases(xt, res["test"][2], res["test"][3], fig("true_cases.png"), correct=True, title=f"{key} – ca dự đoán ĐÚNG (PrivateTest)")
+    try:  # hình minh họa: lỗi khi vẽ không được làm mất kết quả huấn luyện
+        V.plot_history(hist, fig("training_curves.png"), info["best_epoch"], title=meta["run_id"])
+        V.plot_confusion(res["valid"][1]["cm"], fig("confusion_valid.png"), f"{key} – ma trận nhầm lẫn PublicTest (valid)")
+        V.plot_confusion(res["test"][1]["cm"], fig("confusion_test.png"), f"{key} – ma trận nhầm lẫn PrivateTest (test)")
+        V.plot_filters(model, fig("filters_first_conv.png"), fig("filters_last_conv.png"))
+        xt = data["test"][0][: len(res["test"][2])]
+        if cfg["model"] not in ("resnet18", "vgg16bn"):
+            V.plot_feature_maps(model, xt[0], mean, std, fig("feature_maps_last_conv.png"))
+        V.plot_cases(xt, res["test"][2], res["test"][3], fig("wrong_cases.png"), correct=False, title=f"{key} – ca dự đoán SAI (PrivateTest)")
+        V.plot_cases(xt, res["test"][2], res["test"][3], fig("true_cases.png"), correct=True, title=f"{key} – ca dự đoán ĐÚNG (PrivateTest)")
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        devs = {str(t.device) for t in list(model.parameters()) + list(model.buffers())}
+        print(f"[cảnh báo] lỗi khi vẽ hình ({e}); thiết bị của tham số/buffer: {devs}. Kết quả vẫn được lưu.")
 
     metrics = {**info, "n_params": count_params(model),
                "valid_loss": res["valid"][0], "valid_acc": res["valid"][1]["acc"], "valid_f1": res["valid"][1]["f1"],

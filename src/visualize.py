@@ -146,11 +146,15 @@ def plot_feature_maps(model, x_img, mean, std, path, title=""):
     _, cl = last_conv(model)
     out = {}
     h = cl.register_forward_hook(lambda m, i, o: out.setdefault("a", o.detach().float().cpu()))
-    dev = next(model.parameters()).device
-    t = ((torch.from_numpy(x_img).float() / 255 - mean) / std)[None, None].to(dev)
+    p = cl.weight
+    t = ((torch.from_numpy(np.ascontiguousarray(x_img)).float() / 255 - float(mean)) / float(std)).reshape(1, 1, *x_img.shape)
+    t = t.to(device=p.device, dtype=torch.float32)
     model.eval()
-    model(t)
-    h.remove()
+    try:
+        with torch.autocast(device_type=p.device.type, enabled=p.device.type == "cuda"):
+            model(t)
+    finally:
+        h.remove()
     a = out["a"][0].numpy()
     order = np.argsort(-a.mean((1, 2)))[:31]
     fig, axes = plt.subplots(4, 8, figsize=(12, 6.2))
