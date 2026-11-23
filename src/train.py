@@ -41,9 +41,11 @@ def make_optimizer(model, cfg):
 def evaluate_loader(model, loader, criterion=None, tta=False):
     """Trả về (loss trung bình, accuracy, nhãn thật, xác suất dự đoán)."""
     model.eval()
+    dev = next(model.parameters()).device
     criterion = criterion or nn.CrossEntropyLoss()
     tot, n, ys, ps = 0.0, 0, [], []
     for x, y in loader:
+        x, y = x.to(dev, non_blocking=True), y.to(dev, non_blocking=True)
         with torch.autocast(device_type=x.device.type, enabled=x.device.type == "cuda"):
             logits = model(x)
             if tta:                                          # test-time augmentation: trung bình với ảnh lật ngang
@@ -74,6 +76,7 @@ def train_model(model, loaders, cfg, run_dir, logger=None, verbose=True):
         model.train()
         tl, tc, tn = 0.0, 0, 0
         for x, y in loaders["train"]:
+            x, y = x.to(device, non_blocking=True), y.to(device, non_blocking=True)
             x = augment_batch(x, cfg["augment"])
             with torch.autocast(device_type=device.type, enabled=device.type == "cuda"):
                 out = model(x)                                   # 1. forward

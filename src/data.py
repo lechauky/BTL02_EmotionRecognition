@@ -13,7 +13,7 @@ import tarfile
 import numpy as np
 import torch
 import torch.nn.functional as F
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import TensorDataset
 
 from . import config as C
 
@@ -101,6 +101,27 @@ def augment_batch(x, mode):
     return out
 
 
+class DeviceLoader:
+    """DataLoader cho dữ liệu đã nằm sẵn trên GPU: mỗi epoch xáo trộn chỉ số rồi cắt batch (nhanh, không cần worker).
+    Hành vi giống DataLoader(TensorDataset(x, y), batch_size, shuffle)."""
+
+    def __init__(self, x, y, batch_size, shuffle=False, seed=42):
+        self.dataset = TensorDataset(x, y)
+        self.x, self.y, self.bs, self.shuffle = x, y, batch_size, shuffle
+        self.g = torch.Generator().manual_seed(seed)
+
+    def __len__(self):
+        return (len(self.y) + self.bs - 1) // self.bs
+
+    def __iter__(self):
+        n = len(self.y)
+        idx = torch.randperm(n, generator=self.g) if self.shuffle else torch.arange(n)
+        idx = idx.to(self.x.device)
+        for i in range(0, n, self.bs):
+            j = idx[i:i + self.bs]
+            yield self.x[j], self.y[j]
+
+
 def make_loaders(data, batch_size, device, limit=None, seed=42):
     """DataLoader trên tensor đã nằm sẵn trong bộ nhớ thiết bị (GPU): đọc dữ liệu không còn là nút thắt."""
     mean, std = train_stats(data["train"][0])
@@ -108,7 +129,6 @@ def make_loaders(data, batch_size, device, limit=None, seed=42):
     for s, (x, y) in data.items():
         if limit:
             x, y = x[:limit if s == "train" else limit // 4], y[:limit if s == "train" else limit // 4]
-        ds = TensorDataset(to_tensor(x, mean, std).to(device), torch.from_numpy(y).to(device))
-        g = torch.Generator().manual_seed(seed)
-        loaders[s] = DataLoader(ds, batch_size=batch_size, shuffle=(s == "train"), generator=g if s == "train" else None)
+        loaders[s] = DeviceLoader(to_tensor(x, mean, std).to(device), torch.from_numpy(y).to(device),
+                                  batch_size, shuffle=(s == "train"), seed=seed)
     return loaders, (mean, std)
