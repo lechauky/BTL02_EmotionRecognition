@@ -61,11 +61,18 @@ def put(ws, r, c, v, fmt=None, bold=False, wrap=False, link=None):
     return cell
 
 
-def short_time(s):
+def short_time(s, platform=""):
+    """Đổi mốc thời gian sang giờ Việt Nam. Bản ghi cũ không có múi giờ: nếu chạy trên Colab thì đó là giờ UTC."""
     try:
-        return dt.datetime.fromisoformat(s)
+        t = dt.datetime.fromisoformat(str(s))
     except Exception:
         return None
+    if t.tzinfo is None:
+        if "Colab" in str(platform):
+            t = t.replace(tzinfo=dt.timezone.utc)
+        else:
+            return t
+    return t.astimezone(C.VN_TZ)
 
 
 def sheet_guide(wb, df):
@@ -75,7 +82,7 @@ def sheet_guide(wb, df):
     ws.column_dimensions["B"].width = 110
     ws["A1"] = "NHẬT KÝ THỰC NGHIỆM – BTL02: NHẬN DẠNG CẢM XÚC KHUÔN MẶT (FER2013) BẰNG CNN – PYTORCH"
     ws["A1"].font = FTITLE
-    ws["A2"] = (f"{C.GROUP_NAME} · Lớp {C.CLASS_NAME} · GV {C.LECTURER} · dựng lại lúc {dt.datetime.now():%Y-%m-%d %H:%M} "
+    ws["A2"] = (f"{C.GROUP_NAME} · Lớp {C.CLASS_NAME} · GV {C.LECTURER} · dựng lại lúc {C.now():%Y-%m-%d %H:%M} (giờ VN) "
                 f"từ {len(df)} thư mục thực nghiệm trong exps/")
     ws["A2"].font = Font(name=F, size=10, italic=True)
     links = [("Kho code + exps (GitHub)", C.GITHUB_REPO), ("Trọng số (Google Drive)", C.DRIVE_WEIGHTS_URL),
@@ -110,7 +117,7 @@ NK_COLS = [("STT", 5), ("Ngày", 11), ("Bắt đầu", 8), ("Kết thúc", 8), (
 
 def journal_values(i, r):
     """Một dòng của sheet NhatKy (dùng chung cho file Excel và cho việc ghi thẳng lên Google Sheets từ Colab)."""
-    st, en = short_time(r["start"]), short_time(r["end"])
+    st, en = short_time(r["start"], r.get("platform", "")), short_time(r["end"], r.get("platform", ""))
     data, model, opt = T.slug({k[4:]: r[k] for k in r.index if k.startswith("cfg_")})
     link = lambda url, text: f'=HYPERLINK("{url}","{text}")' if url else text  # noqa: E731
     wb_url = r.get("wandb_url") if isinstance(r.get("wandb_url"), str) else ""

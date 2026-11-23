@@ -27,6 +27,15 @@ CLASSES = ["Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral"]
 CLASSES_VI = ["Giận dữ", "Ghê tởm", "Sợ hãi", "Vui", "Buồn", "Ngạc nhiên", "Bình thường"]
 SPLITS = {"train": "Training", "valid": "PublicTest", "test": "PrivateTest"}
 
+# Giờ Việt Nam: máy Colab chạy theo giờ UTC, nên mọi mốc thời gian đều ghi kèm múi giờ +07:00
+import datetime as _dt
+VN_TZ = _dt.timezone(_dt.timedelta(hours=7), "ICT")
+
+
+def now():
+    return _dt.datetime.now(VN_TZ)
+
+
 GROUP_NAME = "Nhóm 06"
 CLASS_NAME = "DCT123C4"
 LECTURER = "Đỗ Như Tài"

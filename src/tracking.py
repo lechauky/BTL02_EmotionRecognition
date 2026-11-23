@@ -39,7 +39,7 @@ def slug(cfg):
 
 def make_run_dir(key, cfg, author, note=""):
     group = EXPERIMENTS[key][0] if key in EXPERIMENTS else "X"
-    now = dt.datetime.now()
+    now = C.now()
     data, model, opt = slug(cfg)
     run_id = f"{key}_{data}_{model}_{opt}_{now:%y%m%d-%H%M}"
     d = os.path.join(C.EXPS_DIR, group, run_id)
@@ -77,7 +77,7 @@ def env_info():
 
 
 def finish(d, meta, metrics):
-    meta["end"] = dt.datetime.now().isoformat(timespec="seconds")
+    meta["end"] = C.now().isoformat(timespec="seconds")
     json.dump(meta, open(os.path.join(d, "meta.json"), "w"), indent=2, ensure_ascii=False)
     json.dump(metrics, open(os.path.join(d, "metrics.json"), "w"), indent=2)
     write_readme(d, meta, metrics)

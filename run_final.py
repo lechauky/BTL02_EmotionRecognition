@@ -87,7 +87,7 @@ def main():
     final = {
         "selected_key": best["key"], "run_id": best["run_id"], "group": best["group"], "rule": "max valid_acc (PublicTest)",
         "description": EXPERIMENTS[best["key"]][1], "author_of_run": best["author"], "evaluated_by": args.author,
-        "evaluated_at": dt.datetime.now().isoformat(timespec="seconds"),
+        "evaluated_at": C.now().isoformat(timespec="seconds"),
         **{f"{s}_{k}{'_tta' if tta else ''}": float(v[k]) for (s, tta), v in res.items() for k in ("acc", "loss", "f1")},
         "per_class_test": pc, "confusion_test": res[("test", False)]["m"]["cm"].tolist(),
     }
