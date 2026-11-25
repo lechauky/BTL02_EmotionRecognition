@@ -1,0 +1,131 @@
+{
+  "selected_key": "D2",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "group": "D",
+  "rule": "max valid_acc (PublicTest)",
+  "description": "VGG16-BN tiền huấn luyện ImageNet, fine-tune, ảnh 96×96",
+  "author_of_run": "Đỗ Minh Thương",
+  "evaluated_by": "Đỗ Minh Thương",
+  "evaluated_at": "2026-11-25T11:20:34+07:00",
+  "valid_acc": 0.6876567288938423,
+  "valid_loss": 0.8983737268166211,
+  "valid_f1": 0.6609455663951606,
+  "test_acc": 0.6806910002786292,
+  "test_loss": 0.8825465301744584,
+  "test_f1": 0.6538131224876624,
+  "valid_acc_tta": 0.6876567288938423,
+  "valid_loss_tta": 0.8668126585789795,
+  "valid_f1_tta": 0.6623354079728706,
+  "test_acc_tta": 0.694343828364447,
+  "test_loss_tta": 0.8454024575486692,
+  "test_f1_tta": 0.6689361779064545,
+  "per_class_test": {
+    "Angry": {
+      "precision": 0.6386,
+      "recall": 0.5723,
+      "f1-score": 0.6037,
+      "support": 491.0
+    },
+    "Disgust": {
+      "precision": 0.5067,
+      "recall": 0.6909,
+      "f1-score": 0.5846,
+      "support": 55.0
+    },
+    "Fear": {
+      "precision": 0.4971,
+      "recall": 0.4943,
+      "f1-score": 0.4957,
+      "support": 528.0
+    },
+    "Happy": {
+      "precision": 0.9045,
+      "recall": 0.8942,
+      "f1-score": 0.8993,
+      "support": 879.0
+    },
+    "Sad": {
+      "precision": 0.5314,
+      "recall": 0.5976,
+      "f1-score": 0.5626,
+      "support": 594.0
+    },
+    "Surprise": {
+      "precision": 0.8197,
+      "recall": 0.7212,
+      "f1-score": 0.7673,
+      "support": 416.0
+    },
+    "Neutral": {
+      "precision": 0.6533,
+      "recall": 0.6741,
+      "f1-score": 0.6635,
+      "support": 626.0
+    }
+  },
+  "confusion_test": [
+    [
+      281,
+      14,
+      62,
+      11,
+      73,
+      4,
+      46
+    ],
+    [
+      9,
+      38,
+      4,
+      2,
+      1,
+      0,
+      1
+    ],
+    [
+      60,
+      9,
+      261,
+      11,
+      104,
+      36,
+      47
+    ],
+    [
+      12,
+      1,
+      23,
+      786,
+      17,
+      13,
+      27
+    ],
+    [
+      46,
+      6,
+      68,
+      21,
+      355,
+      6,
+      92
+    ],
+    [
+      11,
+      2,
+      67,
+      21,
+      4,
+      300,
+      11
+    ],
+    [
+      21,
+      5,
+      40,
+      17,
+      114,
+      7,
+      422
+    ]
+  ]
+}

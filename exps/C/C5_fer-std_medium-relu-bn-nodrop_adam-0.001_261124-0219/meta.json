@@ -1,0 +1,18 @@
+{
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "key": "C5",
+  "group": "C",
+  "group_title": "Hàm kích hoạt và điều chuẩn",
+  "version": "v1",
+  "description": "Bỏ Dropout (conv và FC)",
+  "author": "Vũ Hoàng Phương",
+  "note": "",
+  "start": "2026-11-24T02:19:43+07:00",
+  "command": "run_experiment.py --group C --author Vũ Hoàng Phương --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-24T02:25:52+07:00"
+}

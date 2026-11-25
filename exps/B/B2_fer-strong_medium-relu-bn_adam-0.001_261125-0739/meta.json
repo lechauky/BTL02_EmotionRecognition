@@ -1,0 +1,18 @@
+{
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "key": "B2",
+  "group": "B",
+  "group_title": "Kỹ thuật huấn luyện",
+  "version": "v2",
+  "description": "Tăng cường mạnh (xoay 20°, dịch 15%, zoom 15%, xóa ngẫu nhiên)",
+  "author": "Lê Châu Kỳ",
+  "note": "",
+  "start": "2026-11-25T07:39:35+07:00",
+  "command": "run_experiment.py --group B --author Lê Châu Kỳ --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-25T07:49:06+07:00"
+}

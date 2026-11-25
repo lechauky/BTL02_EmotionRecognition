@@ -7,6 +7,7 @@ thực nghiệm trên GitHub (log, cấu hình, hình) và trọng số trên Go
 Sheet KiemTra đối chiếu các con số được trích dẫn trong báo cáo/slide (report/citations.json) với nhật ký.
 """
 import datetime as dt
+import glob
 import json
 import os
 
@@ -86,13 +87,15 @@ def sheet_guide(wb, df):
                 f"từ {len(df)} thư mục thực nghiệm trong exps/")
     ws["A2"].font = Font(name=F, size=10, italic=True)
     links = [("Kho code + exps (GitHub)", C.GITHUB_REPO), ("Trọng số (Google Drive)", C.DRIVE_WEIGHTS_URL),
-             ("Slide (Google Slides)", C.SLIDES_URL), ("Nhật ký này (Google Sheets)", C.SHEETS_URL)]
-    rows = [("Liên kết", "")] + [(a, b or "(điền sau)") for a, b in links] + [("", ""), ("Các sheet", "")] + [
+             ("Slide (Google Slides)", C.SLIDES_URL), ("Nhật ký này (Google Sheets)", C.SHEETS_URL),
+             ("Báo cáo (Google Docs)", C.REPORT_URL)]
+    rows = [("Liên kết", "")] + [(a, b or "(điền sau)") for a, b in links] + [("Các sheet", "")] + [
         ("NhatKy", "Mỗi dòng là MỘT lần chạy: ngày giờ, người chạy, thí nghiệm, phiên bản, mô hình, dữ liệu, tối ưu, kết quả, "
                    "thiết bị, commit, liên kết tới thư mục thực nghiệm (GitHub) và trọng số (Drive)."),
         ("TongHop", "Mỗi thí nghiệm một dòng (phiên bản mới nhất), so với baseline A2; theo 4 nhóm A, B, C, D."),
         ("PhanCong", "Task manager: trục dọc = đầu việc, trục ngang = thành viên (ma trận RACI) + trạng thái, sản phẩm."),
-        ("KiemTra", "Đối chiếu từng con số trích dẫn trong báo cáo/slide với nhật ký: cột 'Khớp' phải là ✔."),
+        ("KiemTra", "Đối chiếu từng con số trích dẫn trong báo cáo/slide (report/citations.json) với nhật ký NhatKy và với "
+                    "metrics.json của thư mục thực nghiệm: cột 'Khớp' phải là ✔."),
         ("", ""), ("Quy tắc đặt tên", "exps/<nhóm>/<mã>_<dữ liệu>_<mô hình>_<tối ưu>_<yymmdd-HHMM>/ – mỗi lần chạy một thư mục, "
                                      "không ghi đè; chạy lại cùng mã tạo phiên bản mới (v2, v3…)."),
         ("Phiên bản Sheets", "File → Lịch sử phiên bản (Version history) để xem mọi lần cập nhật; mỗi lần cập nhật = một lần chạy make_log.py."),
@@ -214,6 +217,14 @@ RACI_TASKS = [
 ]
 
 
+def task_status(prod, df):
+    if prod == "exps/FINAL":
+        return "Hoàn thành" if glob.glob(os.path.join(C.EXPS_DIR, "FINAL", "*", "final_result.json")) else ""
+    if prod.startswith("exps/") and prod != "exps/_data":
+        return "Hoàn thành" if len(df) and (df["folder"].str.startswith(prod + "/")).any() else ""
+    return "Hoàn thành" if load_citations() else ""
+
+
 def sheet_raci(wb, df):
     ws = wb.create_sheet("PhanCong")
     ws["A1"] = "PHÂN CÔNG (TASK MANAGER) – trục dọc: đầu việc · trục ngang: thành viên (RACI)"
@@ -234,8 +245,8 @@ def sheet_raci(wb, df):
             if "R" in roles.get(code, ""):
                 c.fill = KEY
         put(ws, r, 7, prod, wrap=True)
-        put(ws, r, 8, "Hoàn thành" if (prod.startswith("exps/") and len(df) and (df["folder"].str.startswith(prod)).any()) else "")
-        if prod.startswith("exps/") and prod != "exps/_data":
+        put(ws, r, 8, task_status(prod, df))
+        if prod.startswith("exps/") and prod not in ("exps/_data", "exps/FINAL"):
             put(ws, r, 9, f'=COUNTIF(NhatKy!$F$2:$F$1000,"{prod.split("/")[1]}")')
     r = 6 + len(RACI_TASKS)
     ws.cell(row=r, column=1, value="THÀNH VIÊN").font = FSUB
@@ -253,39 +264,80 @@ def sheet_raci(wb, df):
     ws.freeze_panes = "C5"
 
 
+CHECK_COLS = [("STT", 5), ("Tài liệu", 9), ("Vị trí", 18), ("Nội dung", 40), ("run_id", 46), ("Chỉ số", 12),
+              ("Giá trị trích dẫn", 11), ("Giá trị trong nhật ký (NhatKy)", 12),
+              ("Giá trị trong thư mục thực nghiệm (metrics.json)", 14), ("Khớp", 7), ("Thư mục thực nghiệm", 12)]
+CHECK_TOP = 4
+NK_COL = {"valid_acc": "P", "valid_loss": "Q", "test_acc": "R", "test_f1": "S", "n_params": "O"}
+
+
+def load_citations():
+    return json.load(open(CITATIONS, encoding="utf-8")) if os.path.exists(CITATIONS) else []
+
+
+def file_value(c):
+    """Đọc trực tiếp con số trong thư mục thực nghiệm: metrics.json (lần chạy) hoặc final_result.json (exps/FINAL)."""
+    rid = c["run_id"]
+    try:
+        if c.get("source") == "final":
+            d = json.load(open(os.path.join(C.EXPS_DIR, "FINAL", rid, "final_result.json"), encoding="utf-8"))
+        else:
+            d = json.load(open(os.path.join(C.EXPS_DIR, rid.split("_")[0][0], rid, "metrics.json")))
+        return float(d[c["metric"]])
+    except Exception:
+        return "KHÔNG THẤY"
+
+
+def folder_url(c):
+    g = "FINAL" if c.get("source") == "final" else c["run_id"].split("_")[0][0]
+    return f"{C.GITHUB_REPO}/tree/{C.GITHUB_BRANCH}/exps/{g}/{c['run_id']}"
+
+
+def check_values(cites):
+    """Các dòng của sheet KiemTra (dùng chung cho Excel và Google Sheets)."""
+    rows = []
+    for i, c in enumerate(cites, 1):
+        r = CHECK_TOP + i
+        dec = c.get("decimals", 4)
+        cl = NK_COL.get(c["metric"]) if c.get("source") != "final" else None
+        nk = (f'=IFERROR(INDEX(NhatKy!${cl}$2:${cl}$1000,MATCH(E{r},NhatKy!$W$2:$W$1000,0)),"KHÔNG THẤY")'
+              if cl else "— (chỉ có trong FINAL)")
+        g, h, i_ = f"ROUND(G{r},{dec})", f"ROUND(H{r},{dec})", f"ROUND(I{r},{dec})"
+        ok = (f'=IF(AND(ISNUMBER(G{r}),ISNUMBER(I{r})),IF({g}={i_},IF(ISNUMBER(H{r}),IF({g}={h},"✔","✘"),'
+              f'IF(LEFT(H{r},1)="—","✔","✘")),"✘"),"✘")')
+        rows.append([i, c["doc"], c["where"], c["text"], c["run_id"], c["metric"], c["value"], nk, file_value(c), ok,
+                     f'=HYPERLINK("{folder_url(c)}","mở")'])
+    return rows
+
+
 def sheet_check(wb, df, rowmap):
     ws = wb.create_sheet("KiemTra")
-    ws["A1"] = "KIỂM TRA THỐNG NHẤT: báo cáo / slide  ↔  nhật ký  ↔  thư mục thực nghiệm"
+    ws["A1"] = "KIỂM TRA THỐNG NHẤT: báo cáo / slide  ↔  nhật ký (NhatKy)  ↔  thư mục thực nghiệm (exps/)"
     ws["A1"].font = FTITLE
-    ws["A2"] = ("Mỗi con số trích dẫn trong báo cáo/slide được ghi kèm run_id. Cột 'Giá trị trong nhật ký' lấy bằng công thức "
-                "từ sheet NhatKy; cột 'Khớp' = ✔ nếu bằng nhau (làm tròn như khi trích dẫn).")
+    ws["A2"] = CHECK_NOTE
     ws["A2"].font = Font(name=F, size=10, italic=True)
-    cols = ["STT", "Tài liệu", "Vị trí", "Nội dung", "run_id", "Chỉ số", "Giá trị trích dẫn", "Giá trị trong nhật ký",
-            "Khớp", "Thư mục thực nghiệm"]
-    header(ws, 4, cols, [5, 10, 16, 40, 44, 12, 12, 12, 7, 14])
-    cites = json.load(open(CITATIONS, encoding="utf-8")) if os.path.exists(CITATIONS) else []
-    col = {"valid_acc": "P", "test_acc": "R", "test_f1": "S", "valid_loss": "Q", "n_params": "O"}
-    for i, c in enumerate(cites, 1):
-        r = 4 + i
-        nr = rowmap.get(c["run_id"])
-        put(ws, r, 1, i)
-        put(ws, r, 2, c["doc"])
-        put(ws, r, 3, c["where"], wrap=True)
-        put(ws, r, 4, c["text"], wrap=True)
-        put(ws, r, 5, c["run_id"])
-        put(ws, r, 6, c["metric"])
-        fmt = PCT if "acc" in c["metric"] else ("#,##0" if c["metric"] == "n_params" else "0.0000")
-        put(ws, r, 7, c["value"], fmt=fmt)
-        cl = col[c["metric"]]
-        put(ws, r, 8, f'=IFERROR(INDEX(NhatKy!${cl}$2:${cl}$1000,MATCH(E{r},NhatKy!$W$2:$W$1000,0)),"KHÔNG THẤY")', fmt=fmt)
-        dec = c.get("decimals", 4)
-        put(ws, r, 9, f'=IF(ISNUMBER(H{r}),IF(ROUND(G{r},{dec})=ROUND(H{r},{dec}),"✔","✘"),"✘")')
-        gh = df.loc[df["run_id"] == c["run_id"], "github"]
-        put(ws, r, 10, "mở" if len(gh) and gh.iloc[0] else "", link=(gh.iloc[0] if len(gh) and gh.iloc[0] else None))
+    header(ws, CHECK_TOP, [c for c, _ in CHECK_COLS], [w for _, w in CHECK_COLS])
+    cites = load_citations()
+    for i, row in enumerate(check_values(cites), 1):
+        r = CHECK_TOP + i
+        c = cites[i - 1]
+        fmt = PCT if "acc" in c["metric"] or "f1" in c["metric"] else ("#,##0" if c["metric"] == "n_params" else "0.0000")
+        for k, v in enumerate(row, 1):
+            cell = put(ws, r, k, v, fmt=fmt if k in (7, 8, 9) else None, wrap=k in (3, 4))
+            if k == 11:
+                cell.font = FLINK
     if cites:
-        ws.conditional_formatting.add(f"I5:I{4 + len(cites)}", CellIsRule(operator="equal", formula=['"✔"'], fill=GOOD))
-        ws.conditional_formatting.add(f"I5:I{4 + len(cites)}", CellIsRule(operator="equal", formula=['"✘"'], fill=BAD))
+        n = CHECK_TOP + len(cites)
+        ws.conditional_formatting.add(f"J5:J{n}", CellIsRule(operator="equal", formula=['"✔"'], fill=GOOD))
+        ws.conditional_formatting.add(f"J5:J{n}", CellIsRule(operator="equal", formula=['"✘"'], fill=BAD))
+        put(ws, n + 2, 4, "Số dòng khớp / tổng", bold=True)
+        put(ws, n + 2, 10, f'=COUNTIF(J5:J{n},"✔")&"/"&{len(cites)}', bold=True)
     ws.freeze_panes = "A5"
+
+
+CHECK_NOTE = ("Mỗi con số trích dẫn trong báo cáo/slide ghi kèm run_id (report/citations.json). Cột H lấy bằng công thức từ sheet "
+              "NhatKy; cột I đọc trực tiếp metrics.json (hoặc exps/FINAL/.../final_result.json) của thư mục thực nghiệm; "
+              "cột 'Khớp' = ✔ khi cả ba bằng nhau (làm tròn như khi trích dẫn).")
 
 
 def build(path=None):

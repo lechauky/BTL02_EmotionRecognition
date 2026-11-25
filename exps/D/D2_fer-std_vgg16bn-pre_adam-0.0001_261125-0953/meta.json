@@ -1,0 +1,18 @@
+{
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "key": "D2",
+  "group": "D",
+  "group_title": "Học chuyển giao",
+  "version": "v1",
+  "description": "VGG16-BN tiền huấn luyện ImageNet, fine-tune, ảnh 96×96",
+  "author": "Đỗ Minh Thương",
+  "note": "",
+  "start": "2026-11-25T09:53:01+07:00",
+  "command": "run_experiment.py --group D --author Đỗ Minh Thương --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-25T10:07:07+07:00"
+}

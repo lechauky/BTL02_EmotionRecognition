@@ -20,7 +20,8 @@ GITHUB_REPO = os.environ.get("FER_GITHUB_REPO", "https://github.com/lechauky/BTL
 GITHUB_BRANCH = os.environ.get("FER_GITHUB_BRANCH", "main")
 DRIVE_WEIGHTS_URL = os.environ.get("FER_DRIVE_WEIGHTS_URL", "https://drive.google.com/drive/folders/16lyivk-DlgbP9q31Oxg2acJtdwTRiyyV")  # thư mục exps trên Drive (có checkpoints/best.pt)
 SHEETS_URL = os.environ.get("FER_SHEETS_URL", "https://docs.google.com/spreadsheets/d/17R3AmpbdE-dxEJrX0fMZhDw2iZWPCG3-ITbCVEo-V0E/edit")
-SLIDES_URL = os.environ.get("FER_SLIDES_URL", "")
+SLIDES_URL = os.environ.get("FER_SLIDES_URL", "https://docs.google.com/presentation/d/1bNrO7upN5_ZvVyTf7tVLWWEOp1so5iikSQCt5YaDePg/edit")
+REPORT_URL = os.environ.get("FER_REPORT_URL", "https://docs.google.com/document/d/1pyOpBkW3MEqHEU0noBylXstVJ1_XYPVVwMgzZPR7U-M/edit")
 
 # FER2013: nhãn gốc trong file csv
 CLASSES = ["Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral"]

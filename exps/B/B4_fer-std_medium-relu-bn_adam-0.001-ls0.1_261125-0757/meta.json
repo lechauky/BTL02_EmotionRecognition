@@ -1,0 +1,18 @@
+{
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "key": "B4",
+  "group": "B",
+  "group_title": "Kỹ thuật huấn luyện",
+  "version": "v2",
+  "description": "Label smoothing 0.1",
+  "author": "Lê Châu Kỳ",
+  "note": "",
+  "start": "2026-11-25T07:57:49+07:00",
+  "command": "run_experiment.py --group B --author Lê Châu Kỳ --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-25T08:06:56+07:00"
+}

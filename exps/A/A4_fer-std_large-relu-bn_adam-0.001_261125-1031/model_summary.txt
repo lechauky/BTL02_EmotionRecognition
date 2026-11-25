@@ -1,0 +1,137 @@
+LARGE CNN: 4×64, 4×128, 4×256, 4×512, FC2048
+
+FERCNN(
+  (features): Sequential(
+    (0): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (13): Dropout(p=0.2, inplace=False)
+    (14): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (15): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (16): ReLU(inplace=True)
+    (17): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (18): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (19): ReLU(inplace=True)
+    (20): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (21): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (22): ReLU(inplace=True)
+    (23): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (24): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (25): ReLU(inplace=True)
+    (26): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (27): Dropout(p=0.2, inplace=False)
+    (28): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (29): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (30): ReLU(inplace=True)
+    (31): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (32): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (33): ReLU(inplace=True)
+    (34): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (35): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (36): ReLU(inplace=True)
+    (37): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (38): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (39): ReLU(inplace=True)
+    (40): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (41): Dropout(p=0.2, inplace=False)
+    (42): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (43): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (44): ReLU(inplace=True)
+    (45): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (46): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (47): ReLU(inplace=True)
+    (48): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (49): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (50): ReLU(inplace=True)
+    (51): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (52): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (53): ReLU(inplace=True)
+    (54): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (55): Dropout(p=0.2, inplace=False)
+  )
+  (classifier): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=4608, out_features=2048, bias=False)
+    (2): BatchNorm1d(2048, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (3): ReLU(inplace=True)
+    (4): Dropout(p=0.5, inplace=False)
+    (5): Linear(in_features=2048, out_features=7, bias=True)
+  )
+)
+
+Tầng                             Loại           Đầu ra                  Tham số
+--------------------------------------------------------------------------------
+features.0                       Conv2d         (64, 48, 48)                576
+features.1                       BatchNorm2d    (64, 48, 48)                128
+features.2                       ReLU           (64, 48, 48)                  0
+features.3                       Conv2d         (64, 48, 48)             36,864
+features.4                       BatchNorm2d    (64, 48, 48)                128
+features.5                       ReLU           (64, 48, 48)                  0
+features.6                       Conv2d         (64, 48, 48)             36,864
+features.7                       BatchNorm2d    (64, 48, 48)                128
+features.8                       ReLU           (64, 48, 48)                  0
+features.9                       Conv2d         (64, 48, 48)             36,864
+features.10                      BatchNorm2d    (64, 48, 48)                128
+features.11                      ReLU           (64, 48, 48)                  0
+features.12                      MaxPool2d      (64, 24, 24)                  0
+features.13                      Dropout        (64, 24, 24)                  0
+features.14                      Conv2d         (128, 24, 24)            73,728
+features.15                      BatchNorm2d    (128, 24, 24)               256
+features.16                      ReLU           (128, 24, 24)                 0
+features.17                      Conv2d         (128, 24, 24)           147,456
+features.18                      BatchNorm2d    (128, 24, 24)               256
+features.19                      ReLU           (128, 24, 24)                 0
+features.20                      Conv2d         (128, 24, 24)           147,456
+features.21                      BatchNorm2d    (128, 24, 24)               256
+features.22                      ReLU           (128, 24, 24)                 0
+features.23                      Conv2d         (128, 24, 24)           147,456
+features.24                      BatchNorm2d    (128, 24, 24)               256
+features.25                      ReLU           (128, 24, 24)                 0
+features.26                      MaxPool2d      (128, 12, 12)                 0
+features.27                      Dropout        (128, 12, 12)                 0
+features.28                      Conv2d         (256, 12, 12)           294,912
+features.29                      BatchNorm2d    (256, 12, 12)               512
+features.30                      ReLU           (256, 12, 12)                 0
+features.31                      Conv2d         (256, 12, 12)           589,824
+features.32                      BatchNorm2d    (256, 12, 12)               512
+features.33                      ReLU           (256, 12, 12)                 0
+features.34                      Conv2d         (256, 12, 12)           589,824
+features.35                      BatchNorm2d    (256, 12, 12)               512
+features.36                      ReLU           (256, 12, 12)                 0
+features.37                      Conv2d         (256, 12, 12)           589,824
+features.38                      BatchNorm2d    (256, 12, 12)               512
+features.39                      ReLU           (256, 12, 12)                 0
+features.40                      MaxPool2d      (256, 6, 6)                   0
+features.41                      Dropout        (256, 6, 6)                   0
+features.42                      Conv2d         (512, 6, 6)           1,179,648
+features.43                      BatchNorm2d    (512, 6, 6)               1,024
+features.44                      ReLU           (512, 6, 6)                   0
+features.45                      Conv2d         (512, 6, 6)           2,359,296
+features.46                      BatchNorm2d    (512, 6, 6)               1,024
+features.47                      ReLU           (512, 6, 6)                   0
+features.48                      Conv2d         (512, 6, 6)           2,359,296
+features.49                      BatchNorm2d    (512, 6, 6)               1,024
+features.50                      ReLU           (512, 6, 6)                   0
+features.51                      Conv2d         (512, 6, 6)           2,359,296
+features.52                      BatchNorm2d    (512, 6, 6)               1,024
+features.53                      ReLU           (512, 6, 6)                   0
+features.54                      MaxPool2d      (512, 3, 3)                   0
+features.55                      Dropout        (512, 3, 3)                   0
+classifier.0                     Flatten        (4608,)                       0
+classifier.1                     Linear         (2048,)               9,437,184
+classifier.2                     BatchNorm1d    (2048,)                   4,096
+classifier.3                     ReLU           (2048,)                       0
+classifier.4                     Dropout        (2048,)                       0
+classifier.5                     Linear         (7,)                     14,343
+--------------------------------------------------------------------------------
+Tổng số tham số: 20,412,487

@@ -21,7 +21,8 @@ def _open(sheet_url):
 
 
 def sync(sheet_url=None):
-    from make_log import NK_COLS, SUM_TOP, journal_values, summary_rows
+    from make_log import (CHECK_COLS, CHECK_NOTE, CHECK_TOP, NK_COLS, RACI_TASKS, SUM_TOP, check_values, journal_values,
+                          load_citations, summary_rows, task_status)
     sh = _open(sheet_url)
     df = T.scan()
     df = df[~df["quick"].astype(bool)].reset_index(drop=True) if len(df) else df
@@ -43,8 +44,29 @@ def sync(sheet_url=None):
         ts.update(values=srows, range_name=f"A{SUM_TOP + 1}", value_input_option="USER_ENTERED")
 
     hd = sh.worksheet("HuongDan")
-    links = [[f'=HYPERLINK("{u}","{u}")' if u else "(điền sau)"] for u in
-             (C.GITHUB_REPO, C.DRIVE_WEIGHTS_URL, C.SLIDES_URL, C.SHEETS_URL)]
-    hd.update(values=links, range_name="B5:B8", value_input_option="USER_ENTERED")
-    print(f"Đã cập nhật Google Sheets: NhatKy {len(rows)} lần chạy, TongHop {len(srows)} thí nghiệm.")
+    links = [[name, f'=HYPERLINK("{u}","{u}")' if u else "(điền sau)"] for name, u in
+             (("Kho code + exps (GitHub)", C.GITHUB_REPO), ("Trọng số (Google Drive)", C.DRIVE_WEIGHTS_URL),
+              ("Slide (Google Slides)", C.SLIDES_URL), ("Nhật ký này (Google Sheets)", C.SHEETS_URL),
+              ("Báo cáo (Google Docs)", C.REPORT_URL))]
+    hd.update(values=links, range_name="A5:B9", value_input_option="USER_ENTERED")
+    pc = sh.worksheet("PhanCong")
+    pc.update(values=[[task_status(prod, df)] for _, prod, _ in RACI_TASKS], range_name="H5")
+
+    kt = sh.worksheet("KiemTra")
+    crow = check_values(load_citations())
+    kt.batch_clear([f"A2:K{max(kt.row_count, 2)}"])
+    if kt.col_count < len(CHECK_COLS):
+        kt.add_cols(len(CHECK_COLS) - kt.col_count)
+    if kt.row_count < CHECK_TOP + len(crow) + 3:
+        kt.add_rows(CHECK_TOP + len(crow) + 3 - kt.row_count)
+    kt.update(values=[[CHECK_NOTE]], range_name="A2")
+    kt.update(values=[[c for c, _ in CHECK_COLS]], range_name=f"A{CHECK_TOP}")
+    if crow:
+        n = CHECK_TOP + len(crow)
+        kt.update(values=crow, range_name=f"A{CHECK_TOP + 1}", value_input_option="USER_ENTERED")
+        kt.update(values=[["Số dòng khớp / tổng", "", "", "", "", "", f'=COUNTIF(J5:J{n},"✔")&"/"&{len(crow)}']],
+                  range_name=f"D{n + 2}", value_input_option="USER_ENTERED")
+    ok = sum(1 for r in crow if isinstance(r[8], float) and round(r[8], 4) == round(float(r[6]), 4))
+    print(f"Đã cập nhật Google Sheets: NhatKy {len(rows)} lần chạy, TongHop {len(srows)} thí nghiệm, "
+          f"KiemTra {len(crow)} trích dẫn ({ok} khớp với thư mục thực nghiệm).")
     return len(rows)

@@ -1,0 +1,18 @@
+{
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "key": "A3",
+  "group": "A",
+  "group_title": "Kiến trúc CNN",
+  "version": "v1",
+  "description": "MEDIUM_01 CNN: 3×64, 4×128, 4×256, FC1024",
+  "author": "Trần Thanh Huyền",
+  "note": "",
+  "start": "2026-11-25T10:22:05+07:00",
+  "command": "run_experiment.py --group A --author Trần Thanh Huyền --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-25T10:31:21+07:00"
+}

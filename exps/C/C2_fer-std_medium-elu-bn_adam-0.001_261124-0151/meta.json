@@ -1,0 +1,18 @@
+{
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "key": "C2",
+  "group": "C",
+  "group_title": "Hàm kích hoạt và điều chuẩn",
+  "version": "v1",
+  "description": "Hàm kích hoạt ELU thay ReLU",
+  "author": "Vũ Hoàng Phương",
+  "note": "",
+  "start": "2026-11-24T01:51:02+07:00",
+  "command": "run_experiment.py --group C --author Vũ Hoàng Phương --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-24T02:01:47+07:00"
+}

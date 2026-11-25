@@ -1,0 +1,1675 @@
+[
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 5",
+  "text": "A1 – n_params",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "n_params",
+  "value": 38903111,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 5",
+  "text": "A2 – n_params",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 5",
+  "text": "A3 – n_params",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "n_params",
+  "value": 12104647,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 5",
+  "text": "A4 – n_params",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "n_params",
+  "value": 20412487,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 5",
+  "text": "D2 – n_params",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "n_params",
+  "value": 14989383,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 5",
+  "text": "D1 – n_params",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "n_params",
+  "value": 11180103,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A1",
+  "text": "A1 – n_params",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "n_params",
+  "value": 38903111,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A1",
+  "text": "A1 – valid_acc",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "valid_acc",
+  "value": 0.6715,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A1",
+  "text": "A1 – test_acc",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "test_acc",
+  "value": 0.6927,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A1",
+  "text": "A1 – test_f1",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "test_f1",
+  "value": 0.6761,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A2",
+  "text": "A2 – n_params",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A2",
+  "text": "A2 – valid_acc",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "valid_acc",
+  "value": 0.6843,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A2",
+  "text": "A2 – test_acc",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "test_acc",
+  "value": 0.681,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A2",
+  "text": "A2 – test_f1",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "test_f1",
+  "value": 0.6537,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A3",
+  "text": "A3 – n_params",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "n_params",
+  "value": 12104647,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A3",
+  "text": "A3 – valid_acc",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "valid_acc",
+  "value": 0.6679,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A3",
+  "text": "A3 – test_acc",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "test_acc",
+  "value": 0.6715,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A3",
+  "text": "A3 – test_f1",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "test_f1",
+  "value": 0.6347,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A4",
+  "text": "A4 – n_params",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "n_params",
+  "value": 20412487,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A4",
+  "text": "A4 – valid_acc",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "valid_acc",
+  "value": 0.6656,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A4",
+  "text": "A4 – test_acc",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "test_acc",
+  "value": 0.6757,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 8 – A4",
+  "text": "A4 – test_f1",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "test_f1",
+  "value": 0.6474,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.2 – phân tích",
+  "text": "A2 – valid_acc",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "valid_acc",
+  "value": 0.6843,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.2 – phân tích",
+  "text": "A3 – valid_acc",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "valid_acc",
+  "value": 0.6679,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.2 – phân tích",
+  "text": "A4 – valid_acc",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "valid_acc",
+  "value": 0.6656,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.2 – phân tích",
+  "text": "A1 – valid_acc",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "valid_acc",
+  "value": 0.6715,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.2 – phân tích",
+  "text": "A1 – test_acc",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "test_acc",
+  "value": 0.6927,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B1",
+  "text": "B1 – n_params",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B1",
+  "text": "B1 – valid_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "valid_acc",
+  "value": 0.6317,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B1",
+  "text": "B1 – test_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "test_acc",
+  "value": 0.6389,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B1",
+  "text": "B1 – test_f1",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "test_f1",
+  "value": 0.6261,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B2",
+  "text": "B2 – n_params",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B2",
+  "text": "B2 – valid_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "valid_acc",
+  "value": 0.6762,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B2",
+  "text": "B2 – test_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "test_acc",
+  "value": 0.6927,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B2",
+  "text": "B2 – test_f1",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "test_f1",
+  "value": 0.6752,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B3",
+  "text": "B3 – n_params",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B3",
+  "text": "B3 – valid_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "valid_acc",
+  "value": 0.6746,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B3",
+  "text": "B3 – test_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "test_acc",
+  "value": 0.6863,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B3",
+  "text": "B3 – test_f1",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "test_f1",
+  "value": 0.6686,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B4",
+  "text": "B4 – n_params",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B4",
+  "text": "B4 – valid_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "valid_acc",
+  "value": 0.6865,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B4",
+  "text": "B4 – test_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_acc",
+  "value": 0.7002,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 9 – B4",
+  "text": "B4 – test_f1",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_f1",
+  "value": 0.689,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.3 – phân tích",
+  "text": "B1 – valid_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "valid_acc",
+  "value": 0.6317,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.3 – phân tích",
+  "text": "B2 – valid_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "valid_acc",
+  "value": 0.6762,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.3 – phân tích",
+  "text": "B3 – valid_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "valid_acc",
+  "value": 0.6746,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.3 – phân tích",
+  "text": "B4 – valid_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "valid_acc",
+  "value": 0.6865,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.3 – phân tích",
+  "text": "B4 – test_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_acc",
+  "value": 0.7002,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.3 – phân tích",
+  "text": "B4 – test_f1",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_f1",
+  "value": 0.689,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B1 – valid_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261123-1557",
+  "metric": "valid_acc",
+  "value": 0.6317,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B1 – valid_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "valid_acc",
+  "value": 0.6317,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B1 – test_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261123-1557",
+  "metric": "test_acc",
+  "value": 0.6389,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B1 – test_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "test_acc",
+  "value": 0.6389,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B2 – valid_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261123-1601",
+  "metric": "valid_acc",
+  "value": 0.6762,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B2 – valid_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "valid_acc",
+  "value": 0.6762,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B2 – test_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261123-1601",
+  "metric": "test_acc",
+  "value": 0.6927,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B2 – test_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "test_acc",
+  "value": 0.6927,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B3 – valid_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261123-1610",
+  "metric": "valid_acc",
+  "value": 0.6746,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B3 – valid_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "valid_acc",
+  "value": 0.6746,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B3 – test_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261123-1610",
+  "metric": "test_acc",
+  "value": 0.6863,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B3 – test_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "test_acc",
+  "value": 0.6863,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B4 – valid_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261123-1619",
+  "metric": "valid_acc",
+  "value": 0.6865,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B4 – valid_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "valid_acc",
+  "value": 0.6865,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B4 – test_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261123-1619",
+  "metric": "test_acc",
+  "value": 0.7002,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 10",
+  "text": "B4 – test_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_acc",
+  "value": 0.7002,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C1",
+  "text": "C1 – n_params",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C1",
+  "text": "C1 – valid_acc",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "valid_acc",
+  "value": 0.6342,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C1",
+  "text": "C1 – test_acc",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "test_acc",
+  "value": 0.6576,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C1",
+  "text": "C1 – test_f1",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "test_f1",
+  "value": 0.6066,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C2",
+  "text": "C2 – n_params",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C2",
+  "text": "C2 – valid_acc",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "valid_acc",
+  "value": 0.6682,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C2",
+  "text": "C2 – test_acc",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "test_acc",
+  "value": 0.6807,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C2",
+  "text": "C2 – test_f1",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "test_f1",
+  "value": 0.655,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C3",
+  "text": "C3 – n_params",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C3",
+  "text": "C3 – valid_acc",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "valid_acc",
+  "value": 0.6751,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C3",
+  "text": "C3 – test_acc",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "test_acc",
+  "value": 0.6924,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C3",
+  "text": "C3 – test_f1",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "test_f1",
+  "value": 0.6628,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C4",
+  "text": "C4 – n_params",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "n_params",
+  "value": 11327303,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C4",
+  "text": "C4 – valid_acc",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "valid_acc",
+  "value": 0.662,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C4",
+  "text": "C4 – test_acc",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "test_acc",
+  "value": 0.6704,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C4",
+  "text": "C4 – test_f1",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "test_f1",
+  "value": 0.6467,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C5",
+  "text": "C5 – n_params",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C5",
+  "text": "C5 – valid_acc",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "valid_acc",
+  "value": 0.6721,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C5",
+  "text": "C5 – test_acc",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "test_acc",
+  "value": 0.6793,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 11 – C5",
+  "text": "C5 – test_f1",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "test_f1",
+  "value": 0.6624,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.4 – phân tích",
+  "text": "C1 – valid_acc",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "valid_acc",
+  "value": 0.6342,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.4 – phân tích",
+  "text": "C3 – valid_acc",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "valid_acc",
+  "value": 0.6751,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.4 – phân tích",
+  "text": "C2 – valid_acc",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "valid_acc",
+  "value": 0.6682,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.4 – phân tích",
+  "text": "C4 – valid_acc",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "valid_acc",
+  "value": 0.662,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.4 – phân tích",
+  "text": "C5 – valid_acc",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "valid_acc",
+  "value": 0.6721,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D1",
+  "text": "D1 – n_params",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "n_params",
+  "value": 11180103,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D1",
+  "text": "D1 – valid_acc",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "valid_acc",
+  "value": 0.6386,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D1",
+  "text": "D1 – test_acc",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "test_acc",
+  "value": 0.652,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D1",
+  "text": "D1 – test_f1",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "test_f1",
+  "value": 0.621,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D2",
+  "text": "D2 – n_params",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "n_params",
+  "value": 14989383,
+  "decimals": 0
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D2",
+  "text": "D2 – valid_acc",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_acc",
+  "value": 0.6877,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D2",
+  "text": "D2 – test_acc",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc",
+  "value": 0.6807,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "Bảng 12 – D2",
+  "text": "D2 – test_f1",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_f1",
+  "value": 0.6538,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.5 – phân tích",
+  "text": "D2 – valid_acc",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_acc",
+  "value": 0.6877,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "5.5 – phân tích",
+  "text": "D1 – valid_acc",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "valid_acc",
+  "value": 0.6386,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – valid_acc (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_acc",
+  "value": 0.6877,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – valid_acc_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_acc_tta",
+  "value": 0.6877,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – valid_f1 (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_f1",
+  "value": 0.6609,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – valid_f1_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_f1_tta",
+  "value": 0.6623,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – test_acc (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc",
+  "value": 0.6807,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – test_acc_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc_tta",
+  "value": 0.6943,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – test_f1 (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_f1",
+  "value": 0.6538,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – test_f1_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_f1_tta",
+  "value": 0.6689,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – test_loss (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_loss",
+  "value": 0.8825,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – test_loss_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_loss_tta",
+  "value": 0.8454,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "FINAL – test_acc_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc_tta",
+  "value": 0.6943,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "6.1",
+  "text": "B4 – test_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_acc",
+  "value": 0.7002,
+  "decimals": 4
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "7.2.",
+  "text": "FINAL – test_acc (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc",
+  "value": 0.6807,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Báo cáo",
+  "where": "7.2.",
+  "text": "FINAL – test_acc_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc_tta",
+  "value": 0.6943,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 6",
+  "text": "A1 – n_params",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "n_params",
+  "value": 38903111,
+  "decimals": 0
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 6",
+  "text": "A2 – n_params",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "n_params",
+  "value": 11329607,
+  "decimals": 0
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 6",
+  "text": "A3 – n_params",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "n_params",
+  "value": 12104647,
+  "decimals": 0
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 6",
+  "text": "A4 – n_params",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "n_params",
+  "value": 20412487,
+  "decimals": 0
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 6",
+  "text": "D1 – n_params",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "n_params",
+  "value": 11180103,
+  "decimals": 0
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 6",
+  "text": "D2 – n_params",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "n_params",
+  "value": 14989383,
+  "decimals": 0
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "D2 – valid_acc",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_acc",
+  "value": 0.6877,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "B4 – valid_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "valid_acc",
+  "value": 0.6865,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "A2 – valid_acc",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "valid_acc",
+  "value": 0.6843,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "B2 – valid_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "valid_acc",
+  "value": 0.6762,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "C3 – valid_acc",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "valid_acc",
+  "value": 0.6751,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "B3 – valid_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "valid_acc",
+  "value": 0.6746,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "C5 – valid_acc",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "valid_acc",
+  "value": 0.6721,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "A1 – valid_acc",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "valid_acc",
+  "value": 0.6715,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "C2 – valid_acc",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "valid_acc",
+  "value": 0.6682,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "A3 – valid_acc",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "valid_acc",
+  "value": 0.6679,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "A4 – valid_acc",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "valid_acc",
+  "value": 0.6656,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "C4 – valid_acc",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "valid_acc",
+  "value": 0.662,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "D1 – valid_acc",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "valid_acc",
+  "value": 0.6386,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "C1 – valid_acc",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "valid_acc",
+  "value": 0.6342,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 7",
+  "text": "B1 – valid_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "valid_acc",
+  "value": 0.6317,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A1 – valid_acc",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "valid_acc",
+  "value": 0.6715,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A1 – test_acc",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "test_acc",
+  "value": 0.6927,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A1 – test_f1",
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "metric": "test_f1",
+  "value": 0.6761,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A2 – valid_acc",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "valid_acc",
+  "value": 0.6843,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A2 – test_acc",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "test_acc",
+  "value": 0.681,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A2 – test_f1",
+  "run_id": "A2_fer-std_medium-relu-bn_adam-0.001_261125-1015",
+  "metric": "test_f1",
+  "value": 0.6537,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A3 – valid_acc",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "valid_acc",
+  "value": 0.6679,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A3 – test_acc",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "test_acc",
+  "value": 0.6715,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A3 – test_f1",
+  "run_id": "A3_fer-std_medium01-relu-bn_adam-0.001_261125-1022",
+  "metric": "test_f1",
+  "value": 0.6347,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A4 – valid_acc",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "valid_acc",
+  "value": 0.6656,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A4 – test_acc",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "test_acc",
+  "value": 0.6757,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 8",
+  "text": "A4 – test_f1",
+  "run_id": "A4_fer-std_large-relu-bn_adam-0.001_261125-1031",
+  "metric": "test_f1",
+  "value": 0.6474,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B1 – valid_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "valid_acc",
+  "value": 0.6317,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B1 – test_acc",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "test_acc",
+  "value": 0.6389,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B1 – test_f1",
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261125-0735",
+  "metric": "test_f1",
+  "value": 0.6261,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B2 – valid_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "valid_acc",
+  "value": 0.6762,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B2 – test_acc",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "test_acc",
+  "value": 0.6927,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B2 – test_f1",
+  "run_id": "B2_fer-strong_medium-relu-bn_adam-0.001_261125-0739",
+  "metric": "test_f1",
+  "value": 0.6752,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B3 – valid_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "valid_acc",
+  "value": 0.6746,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B3 – test_acc",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "test_acc",
+  "value": 0.6863,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B3 – test_f1",
+  "run_id": "B3_fer-std_medium-relu-bn_sgd-0.01_261125-0749",
+  "metric": "test_f1",
+  "value": 0.6686,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B4 – valid_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "valid_acc",
+  "value": 0.6865,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B4 – test_acc",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_acc",
+  "value": 0.7002,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 9",
+  "text": "B4 – test_f1",
+  "run_id": "B4_fer-std_medium-relu-bn_adam-0.001-ls0.1_261125-0757",
+  "metric": "test_f1",
+  "value": 0.689,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C1 – valid_acc",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "valid_acc",
+  "value": 0.6342,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C1 – test_acc",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "test_acc",
+  "value": 0.6576,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C1 – test_f1",
+  "run_id": "C1_fer-std_medium-sigmoid-bn_adam-0.001_261124-0139",
+  "metric": "test_f1",
+  "value": 0.6066,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C2 – valid_acc",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "valid_acc",
+  "value": 0.6682,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C2 – test_acc",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "test_acc",
+  "value": 0.6807,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C2 – test_f1",
+  "run_id": "C2_fer-std_medium-elu-bn_adam-0.001_261124-0151",
+  "metric": "test_f1",
+  "value": 0.655,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C3 – valid_acc",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "valid_acc",
+  "value": 0.6751,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C3 – test_acc",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "test_acc",
+  "value": 0.6924,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C3 – test_f1",
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "metric": "test_f1",
+  "value": 0.6628,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C4 – valid_acc",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "valid_acc",
+  "value": 0.662,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C4 – test_acc",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "test_acc",
+  "value": 0.6704,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C4 – test_f1",
+  "run_id": "C4_fer-std_medium-relu-nobn_adam-0.001_261124-0209",
+  "metric": "test_f1",
+  "value": 0.6467,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C5 – valid_acc",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "valid_acc",
+  "value": 0.6721,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C5 – test_acc",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "test_acc",
+  "value": 0.6793,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 10",
+  "text": "C5 – test_f1",
+  "run_id": "C5_fer-std_medium-relu-bn-nodrop_adam-0.001_261124-0219",
+  "metric": "test_f1",
+  "value": 0.6624,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 11",
+  "text": "D1 – valid_acc",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "valid_acc",
+  "value": 0.6386,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 11",
+  "text": "D1 – test_acc",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "test_acc",
+  "value": 0.652,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 11",
+  "text": "D1 – test_f1",
+  "run_id": "D1_fer-std_resnet18-pre_adam-0.0003_261125-0950",
+  "metric": "test_f1",
+  "value": 0.621,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 11",
+  "text": "D2 – valid_acc",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_acc",
+  "value": 0.6877,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 11",
+  "text": "D2 – test_acc",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc",
+  "value": 0.6807,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 11",
+  "text": "D2 – test_f1",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_f1",
+  "value": 0.6538,
+  "decimals": 4
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 12",
+  "text": "FINAL – valid_acc (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "valid_acc",
+  "value": 0.6877,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 12",
+  "text": "FINAL – test_acc (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc",
+  "value": 0.6807,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 12",
+  "text": "FINAL – test_acc_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_acc_tta",
+  "value": 0.6943,
+  "decimals": 4,
+  "source": "final"
+ },
+ {
+  "doc": "Slide",
+  "where": "Slide 12",
+  "text": "FINAL – test_f1_tta (FINAL)",
+  "run_id": "D2_fer-std_vgg16bn-pre_adam-0.0001_261125-0953",
+  "metric": "test_f1_tta",
+  "value": 0.6689,
+  "decimals": 4,
+  "source": "final"
+ }
+]

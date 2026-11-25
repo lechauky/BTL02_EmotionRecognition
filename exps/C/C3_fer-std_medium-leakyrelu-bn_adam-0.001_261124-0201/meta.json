@@ -1,0 +1,18 @@
+{
+  "run_id": "C3_fer-std_medium-leakyrelu-bn_adam-0.001_261124-0201",
+  "key": "C3",
+  "group": "C",
+  "group_title": "Hàm kích hoạt và điều chuẩn",
+  "version": "v1",
+  "description": "Hàm kích hoạt LeakyReLU(0.1) thay ReLU",
+  "author": "Vũ Hoàng Phương",
+  "note": "",
+  "start": "2026-11-24T02:01:47+07:00",
+  "command": "run_experiment.py --group C --author Vũ Hoàng Phương --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-24T02:09:43+07:00"
+}

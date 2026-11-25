@@ -1,0 +1,125 @@
+{
+  "best_epoch": 30,
+  "epochs_run": 40,
+  "train_time_s": 680.9513726234436,
+  "n_params": 38903111,
+  "valid_loss": 0.9509891792073094,
+  "valid_acc": 0.6714962385065478,
+  "valid_f1": 0.6466688394721494,
+  "test_loss": 0.8882940869605053,
+  "test_acc": 0.6926720534967957,
+  "test_f1": 0.6760924639571885,
+  "train_acc_last": 0.7954648368107562,
+  "train_acc_at_best": 0.7408826500400572,
+  "per_class_test": {
+    "Angry": {
+      "precision": 0.5949,
+      "recall": 0.664,
+      "f1-score": 0.6275,
+      "support": 491.0
+    },
+    "Disgust": {
+      "precision": 0.825,
+      "recall": 0.6,
+      "f1-score": 0.6947,
+      "support": 55.0
+    },
+    "Fear": {
+      "precision": 0.6453,
+      "recall": 0.4205,
+      "f1-score": 0.5092,
+      "support": 528.0
+    },
+    "Happy": {
+      "precision": 0.8711,
+      "recall": 0.8999,
+      "f1-score": 0.8853,
+      "support": 879.0
+    },
+    "Sad": {
+      "precision": 0.5402,
+      "recall": 0.5539,
+      "f1-score": 0.547,
+      "support": 594.0
+    },
+    "Surprise": {
+      "precision": 0.832,
+      "recall": 0.75,
+      "f1-score": 0.7889,
+      "support": 416.0
+    },
+    "Neutral": {
+      "precision": 0.6183,
+      "recall": 0.7556,
+      "f1-score": 0.6801,
+      "support": 626.0
+    }
+  },
+  "confusion_test": [
+    [
+      326,
+      3,
+      26,
+      12,
+      69,
+      4,
+      51
+    ],
+    [
+      17,
+      33,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      75,
+      1,
+      222,
+      23,
+      112,
+      38,
+      57
+    ],
+    [
+      18,
+      0,
+      6,
+      791,
+      18,
+      10,
+      36
+    ],
+    [
+      59,
+      2,
+      35,
+      30,
+      329,
+      5,
+      134
+    ],
+    [
+      18,
+      0,
+      38,
+      24,
+      11,
+      312,
+      13
+    ],
+    [
+      35,
+      1,
+      16,
+      27,
+      69,
+      5,
+      473
+    ]
+  ],
+  "quick": false,
+  "wandb_url": ""
+}

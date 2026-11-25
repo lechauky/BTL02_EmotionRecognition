@@ -1,0 +1,18 @@
+{
+  "run_id": "A1_fer-std_small-relu-bn_adam-0.001_261125-1003",
+  "key": "A1",
+  "group": "A",
+  "group_title": "Kiến trúc CNN",
+  "version": "v1",
+  "description": "SMALL CNN: 2 khối (2×64 | 2×128+2×256), FC1024",
+  "author": "Trần Thanh Huyền",
+  "note": "",
+  "start": "2026-11-25T10:03:52+07:00",
+  "command": "run_experiment.py --group A --author Trần Thanh Huyền --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "29ce7d3",
+  "end": "2026-11-25T10:15:24+07:00"
+}

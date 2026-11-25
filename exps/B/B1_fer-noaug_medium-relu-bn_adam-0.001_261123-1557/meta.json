@@ -1,0 +1,18 @@
+{
+  "run_id": "B1_fer-noaug_medium-relu-bn_adam-0.001_261123-1557",
+  "key": "B1",
+  "group": "B",
+  "group_title": "Kỹ thuật huấn luyện",
+  "version": "v4",
+  "description": "Không tăng cường dữ liệu",
+  "author": "Lê Châu Kỳ",
+  "note": "",
+  "start": "2026-11-23T15:57:25",
+  "command": "run_experiment.py --group B --author Lê Châu Kỳ --note ",
+  "device": "Tesla T4",
+  "platform": "Google Colab, Linux 6.6.159+",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "git_commit": "64e5908",
+  "end": "2026-11-23T16:01:02"
+}

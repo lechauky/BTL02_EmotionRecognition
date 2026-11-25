@@ -1,0 +1,85 @@
+Hàm kích hoạt Sigmoid thay ReLU
+
+FERCNN(
+  (features): Sequential(
+    (0): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (2): Sigmoid()
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (5): Sigmoid()
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Dropout(p=0.2, inplace=False)
+    (8): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (10): Sigmoid()
+    (11): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (13): Sigmoid()
+    (14): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (15): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (16): Sigmoid()
+    (17): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (18): Dropout(p=0.2, inplace=False)
+    (19): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (20): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (21): Sigmoid()
+    (22): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (23): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (24): Sigmoid()
+    (25): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (26): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (27): Sigmoid()
+    (28): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (29): Dropout(p=0.2, inplace=False)
+  )
+  (classifier): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=9216, out_features=1024, bias=False)
+    (2): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (3): Sigmoid()
+    (4): Dropout(p=0.5, inplace=False)
+    (5): Linear(in_features=1024, out_features=7, bias=True)
+  )
+)
+
+Tầng                             Loại           Đầu ra                  Tham số
+--------------------------------------------------------------------------------
+features.0                       Conv2d         (64, 48, 48)                576
+features.1                       BatchNorm2d    (64, 48, 48)                128
+features.2                       Sigmoid        (64, 48, 48)                  0
+features.3                       Conv2d         (64, 48, 48)             36,864
+features.4                       BatchNorm2d    (64, 48, 48)                128
+features.5                       Sigmoid        (64, 48, 48)                  0
+features.6                       MaxPool2d      (64, 24, 24)                  0
+features.7                       Dropout        (64, 24, 24)                  0
+features.8                       Conv2d         (128, 24, 24)            73,728
+features.9                       BatchNorm2d    (128, 24, 24)               256
+features.10                      Sigmoid        (128, 24, 24)                 0
+features.11                      Conv2d         (128, 24, 24)           147,456
+features.12                      BatchNorm2d    (128, 24, 24)               256
+features.13                      Sigmoid        (128, 24, 24)                 0
+features.14                      Conv2d         (128, 24, 24)           147,456
+features.15                      BatchNorm2d    (128, 24, 24)               256
+features.16                      Sigmoid        (128, 24, 24)                 0
+features.17                      MaxPool2d      (128, 12, 12)                 0
+features.18                      Dropout        (128, 12, 12)                 0
+features.19                      Conv2d         (256, 12, 12)           294,912
+features.20                      BatchNorm2d    (256, 12, 12)               512
+features.21                      Sigmoid        (256, 12, 12)                 0
+features.22                      Conv2d         (256, 12, 12)           589,824
+features.23                      BatchNorm2d    (256, 12, 12)               512
+features.24                      Sigmoid        (256, 12, 12)                 0
+features.25                      Conv2d         (256, 12, 12)           589,824
+features.26                      BatchNorm2d    (256, 12, 12)               512
+features.27                      Sigmoid        (256, 12, 12)                 0
+features.28                      MaxPool2d      (256, 6, 6)                   0
+features.29                      Dropout        (256, 6, 6)                   0
+classifier.0                     Flatten        (9216,)                       0
+classifier.1                     Linear         (1024,)               9,437,184
+classifier.2                     BatchNorm1d    (1024,)                   2,048
+classifier.3                     Sigmoid        (1024,)                       0
+classifier.4                     Dropout        (1024,)                       0
+classifier.5                     Linear         (7,)                      7,175
+--------------------------------------------------------------------------------
+Tổng số tham số: 11,329,607

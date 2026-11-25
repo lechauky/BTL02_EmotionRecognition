@@ -1,0 +1,125 @@
+{
+  "best_epoch": 2,
+  "epochs_run": 2,
+  "train_time_s": 2.8919241428375244,
+  "n_params": 11329607,
+  "valid_loss": 1.890272427558899,
+  "valid_acc": 0.254,
+  "valid_f1": 0.09223055465885295,
+  "test_loss": 1.8404910793304443,
+  "test_acc": 0.24,
+  "test_f1": 0.08344529034184207,
+  "train_acc_last": 0.236,
+  "train_acc_at_best": 0.236,
+  "per_class_test": {
+    "Angry": {
+      "precision": 0.1613,
+      "recall": 0.2083,
+      "f1-score": 0.1818,
+      "support": 72.0
+    },
+    "Disgust": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 8.0
+    },
+    "Fear": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 66.0
+    },
+    "Happy": {
+      "precision": 0.258,
+      "recall": 0.913,
+      "f1-score": 0.4023,
+      "support": 115.0
+    },
+    "Sad": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 77.0
+    },
+    "Surprise": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 54.0
+    },
+    "Neutral": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 108.0
+    }
+  },
+  "confusion_test": [
+    [
+      15,
+      0,
+      0,
+      57,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0
+    ],
+    [
+      22,
+      0,
+      0,
+      44,
+      0,
+      0,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      105,
+      0,
+      0,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      67,
+      0,
+      0,
+      0
+    ],
+    [
+      22,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0
+    ],
+    [
+      13,
+      0,
+      0,
+      95,
+      0,
+      0,
+      0
+    ]
+  ],
+  "quick": true,
+  "wandb_url": ""
+}
