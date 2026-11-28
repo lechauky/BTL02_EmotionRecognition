@@ -34,7 +34,7 @@ for mf in sorted(glob.glob(os.path.join(EXPS, "[ABCD]", "*", "metrics.json"))):
     meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
     cfg = json.load(open(os.path.join(d, "config.json")))
     h = pd.read_csv(os.path.join(d, "history.csv"))
-    rel = os.path.relpath(d, os.path.dirname(EXPS)).replace("\\", "/")
+    rel = "exps/" + os.path.relpath(d, EXPS).replace("\\", "/")
     figs = sorted(os.listdir(os.path.join(d, "figures"))) if os.path.isdir(os.path.join(d, "figures")) else []
     runs.append(dict(run_id=meta["run_id"], key=meta["key"], group=meta["group"], author=meta["author"],
                      description=meta["description"], start=vn(meta["start"]), end=vn(meta.get("end", "")),
@@ -56,7 +56,7 @@ fin = []
 for ff in glob.glob(os.path.join(EXPS, "FINAL", "*", "final_result.json")):
     d = os.path.dirname(ff)
     f = json.load(open(ff, encoding="utf-8"))
-    rel = os.path.relpath(d, os.path.dirname(EXPS)).replace("\\", "/")
+    rel = "exps/" + os.path.relpath(d, EXPS).replace("\\", "/")
     f.update(dir=d, folder=rel, url=gh(rel),
              figures={x[:-4]: os.path.join(d, x) for x in sorted(os.listdir(d)) if x.endswith(".png")})
     fin.append(f)

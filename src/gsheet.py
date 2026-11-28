@@ -46,8 +46,8 @@ def sync(sheet_url=None):
     hd = sh.worksheet("HuongDan")
     links = [[name, f'=HYPERLINK("{u}","{u}")' if u else "(điền sau)"] for name, u in
              (("Kho code + exps (GitHub)", C.GITHUB_REPO), ("Trọng số (Google Drive)", C.DRIVE_WEIGHTS_URL),
-              ("Slide (Google Slides)", C.SLIDES_URL), ("Nhật ký này (Google Sheets)", C.SHEETS_URL),
-              ("Báo cáo (Google Docs)", C.REPORT_URL))]
+              ("Slide (PowerPoint)", C.SLIDES_URL), ("Nhật ký này (Google Sheets)", C.SHEETS_URL),
+              ("Báo cáo (Word)", C.REPORT_URL))]
     hd.update(values=links, range_name="A5:B9", value_input_option="USER_ENTERED")
     pc = sh.worksheet("PhanCong")
     pc.update(values=[[task_status(prod, df)] for _, prod, _ in RACI_TASKS], range_name="H5")

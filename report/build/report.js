@@ -62,11 +62,12 @@ const P = (parts, o = {}) => new Paragraph({
   children: (Array.isArray(parts) ? parts : [parts]).map((x) => (typeof x === "string" ? t(x) : x)),
   spacing: { after: 120, line: 312 }, alignment: o.align || AlignmentType.JUSTIFIED, ...o,
 });
+const PI = (parts) => P(parts, { indent: { firstLine: 720 }, spacing: { after: 60, line: 300 } });
 const link = (text, url, o = {}) => new ExternalHyperlink({ link: url, children: [t(text, { style: "Hyperlink", color: "0563C1", underline: {}, ...o })] });
 const H1 = (s) => (HEADS.push(s), new Paragraph({ heading: HeadingLevel.HEADING_1, children: [t(s)], pageBreakBefore: true }));
 const H2 = (s) => { WHERE = s.split(" ")[0]; HEADS.push(s); return new Paragraph({ heading: HeadingLevel.HEADING_2, children: [t(s)] }); };
 const H3 = (s) => new Paragraph({ heading: HeadingLevel.HEADING_3, children: [t(s)] });
-const B = (parts, lvl = 0) => new Paragraph({
+const B = (parts, lvl = 0) => new Paragraph({ // (không còn dùng)
   children: (Array.isArray(parts) ? parts : [parts]).map((x) => (typeof x === "string" ? t(x) : x)),
   numbering: { reference: "bul", level: lvl }, spacing: { after: 60, line: 300 }, alignment: AlignmentType.JUSTIFIED,
 });
@@ -143,6 +144,13 @@ const body = [];
 const add = (...xs) => xs.forEach((x) => (Array.isArray(x) ? body.push(...x) : body.push(x)));
 
 // Bìa
+function coverTable() {
+  const w = [1000, 4800, 3000];
+  return [new Table({ width: { size: 8800, type: WidthType.DXA }, columnWidths: w, alignment: AlignmentType.CENTER, rows: [
+    new TableRow({ tableHeader: true, children: ["STT", "Họ và tên", "MSSV"].map((h, i) => cell(h, w[i], { bold: true, color: "FFFFFF", fill: "1F4E79", align: C })) }),
+    ...members.map((m, i) => new TableRow({ children: [cell(String(i + 1), w[0], { align: C }), cell(m[1], w[1]), cell(m[2], w[2], { align: C })] })),
+  ] })];
+}
 const cover = [
   P(t("TRƯỜNG ĐẠI HỌC SÀI GÒN", { bold: true, size: 28 }), { align: C, spacing: { after: 60 } }),
   P(t("KHOA CÔNG NGHỆ THÔNG TIN", { bold: true, size: 28 }), { align: C, spacing: { after: 1200 } }),
@@ -150,11 +158,9 @@ const cover = [
   P(t("BÀI TẬP LỚN 02", { bold: true, size: 36, color: "1F4E79" }), { align: C, spacing: { after: 200 } }),
   P(t("NHẬN DẠNG CẢM XÚC KHUÔN MẶT BẰNG MẠNG TÍCH CHẬP (CNN)", { bold: true, size: 34, color: "1F4E79" }), { align: C, spacing: { after: 120 } }),
   P(t("Facial Expression Recognition on FER2013 with CNN (PyTorch)", { italics: true, size: 26 }), { align: C, spacing: { after: 900 } }),
-  P([t("Lớp: ", { bold: true }), t("SGU26K2_HocSau_S5_DCT123C4_0709")], { align: C, spacing: { after: 60 } }),
   P([t("Giảng viên: ", { bold: true }), t("Đỗ Như Tài")], { align: C, spacing: { after: 60 } }),
-  P([t("Nhóm thực hiện: ", { bold: true }), t("Nhóm 06")], { align: C, spacing: { after: 240 } }),
-  ...table(["STT", "Họ và tên", "MSSV", "Nhóm thực nghiệm"], members.map((m, i) => [String(i + 1), m[1], m[2], m[4]]),
-    [800, 3800, 2200, 2000], "Thành viên nhóm 06", { align: [C, AlignmentType.LEFT, C, C] }),
+  P([t("Lớp: ", { bold: true }), t("DCT123C4")], { align: C, spacing: { after: 240 } }),
+  ...coverTable(),
   P(t("TP. Hồ Chí Minh, tháng 11 năm 2026", { italics: true }), { align: C, spacing: { before: 600 } }),
   new Paragraph({ children: [new PageBreak()] }),
   P(t("MỤC LỤC", { bold: true, size: 30 }), { align: C }),
@@ -164,10 +170,10 @@ const cover = [
 // 0. Liên kết
 add(H1("0. LIÊN KẾT VÀ CÁCH KIỂM TRA TÍNH THỐNG NHẤT"));
 add(P("Báo cáo này là một trong bốn sản phẩm liên kết với nhau. Mọi con số trong báo cáo và slide đều lấy trực tiếp từ thư mục thực nghiệm (exps/) và được ghi kèm mã lần chạy (run_id), nên có thể lần ngược từ báo cáo → nhật ký → thư mục thực nghiệm."));
-WHERE = "Bảng 2";
+WHERE = "Bảng " + (tabNo + 1);
 add(table(["Sản phẩm", "Nội dung", "Liên kết"], [
   ["Nhật ký thực nghiệm (Google Sheets)", "NhatKy: mỗi lần chạy một dòng · TongHop: mỗi thí nghiệm một dòng · PhanCong: ma trận RACI · KiemTra: đối chiếu số liệu. Xem File → Lịch sử phiên bản để biết ai cập nhật, lúc nào.", lnk(L.sheets, "Google Sheets")],
-  ["Slide (Google Slides)", "Tóm tắt kết quả; mỗi bảng số liệu có liên kết tới nhật ký và thư mục thực nghiệm.", L.slides ? lnk(L.slides, "Google Slides") : "(điền sau)"],
+  ["Slide (PowerPoint)", "Tóm tắt kết quả; mỗi bảng số liệu có liên kết tới nhật ký và thư mục thực nghiệm.", L.slides ? lnk(L.slides, "Mở slide") : "(điền sau)"],
   ["Mã nguồn + exps (GitHub)", "Code PyTorch, notebook Colab, toàn bộ exps/ (cấu hình, lịch sử huấn luyện, chỉ số, hình) trừ trọng số.", lnk(L.repo, "GitHub")],
   ["Trọng số mô hình (Google Drive)", "exps/ đầy đủ kèm checkpoints/best.pt của từng lần chạy.", lnk(L.drive, "Google Drive")],
 ], [2400, 5638, 1600], "Các sản phẩm của bài tập và liên kết", { align: [AlignmentType.LEFT, AlignmentType.LEFT, C] }));
@@ -211,7 +217,7 @@ add(img(D.datafig.augmentation, 14, "Một ảnh qua các phép tăng cường d
 add(H1("3. MÔ HÌNH VÀ HUẤN LUYỆN"));
 add(H2("3.1. Kiến trúc CNN"));
 add(P("Bốn mô hình viết lại từ bài mẫu, cùng cấu trúc khối: [Conv3×3 → BatchNorm → kích hoạt] × n → MaxPool 2×2 → Dropout 0,2; sau các khối là Flatten → FC → BatchNorm1d → kích hoạt → Dropout 0,5 → FC 7 lớp. So với bài mẫu, nhóm thêm BatchNorm (cả ở lớp FC) vì khi thử không có BatchNorm ở lớp FC mô hình đứng ở khoảng 25% accuracy (luôn đoán Happy) với lr 0,001."));
-WHERE = "Bảng 5";
+WHERE = "Bảng " + (tabNo + 1);
 add(table(["Mô hình", "Mã", "Các khối tích chập (số kênh)", "FC", "Số tham số"], [
   ["SMALL", "A1", "[64, 64] · [128, 128, 256, 256]", "1024", cite(R.A1, "n_params")],
   ["MEDIUM (baseline)", "A2", "[64, 64] · [128 ×3] · [256 ×3]", "1024", cite(R.A2, "n_params")],
@@ -343,11 +349,11 @@ if (R.A2.figures.filters_last_conv) add(img(R.A2.figures.filters_last_conv, 12, 
 add(H1("7. THẢO LUẬN VÀ KẾT LUẬN"));
 WHERE = "7";
 add(H2("7.1. Những gì nhóm rút ra"));
-add(B([t("Chống quá khớp quan trọng hơn tăng độ sâu. ", { bold: true }), t(`Bỏ tăng cường dữ liệu làm mất ${Math.abs(100 * (R.B1.metrics.valid_acc - base.metrics.valid_acc)).toFixed(2).replace(".", ",")} điểm valid acc, bỏ Dropout mất ${Math.abs(100 * (R.C5.metrics.valid_acc - base.metrics.valid_acc)).toFixed(2).replace(".", ",")} điểm, trong khi mô hình sâu nhất (LARGE) còn kém baseline.`)]));
-add(B([t("Hàm kích hoạt: ", { bold: true }), t("ReLU cùng BatchNorm là đủ; Sigmoid làm mạng sâu học chậm rõ rệt (suy giảm gradient).")]));
-add(B([t("Label smoothing ", { bold: true }), t("là cải tiến rẻ và hiệu quả nhất: không đổi kiến trúc, không tăng thời gian, cải thiện cả valid lẫn test.")]));
-add(B([t("Học chuyển giao ", { bold: true }), t("cho valid acc cao nhất (VGG16-BN) nhưng tốn tài nguyên và quá khớp nhanh; ResNet18 với lr chưa phù hợp còn kém CNN nhỏ.")]));
-add(B([t("Valid và test không luôn cùng thứ hạng: ", { bold: true }), t("chênh lệch giữa nhiều thí nghiệm chỉ khoảng 1 điểm, nên cần nhiều seed (hoặc k-fold) để khẳng định chắc chắn; đây là giới hạn của bài vì mỗi thí nghiệm chỉ chạy với seed 42.")]));
+add(PI([t("Chống quá khớp quan trọng hơn tăng độ sâu. ", { bold: true }), t(`Bỏ tăng cường dữ liệu làm mất ${Math.abs(100 * (R.B1.metrics.valid_acc - base.metrics.valid_acc)).toFixed(2).replace(".", ",")} điểm valid acc, bỏ Dropout mất ${Math.abs(100 * (R.C5.metrics.valid_acc - base.metrics.valid_acc)).toFixed(2).replace(".", ",")} điểm, trong khi mô hình sâu nhất (LARGE) còn kém baseline.`)]));
+add(PI([t("Hàm kích hoạt: ", { bold: true }), t("ReLU cùng BatchNorm là đủ; Sigmoid làm mạng sâu học chậm rõ rệt (suy giảm gradient).")]));
+add(PI([t("Label smoothing ", { bold: true }), t("là cải tiến rẻ và hiệu quả nhất: không đổi kiến trúc, không tăng thời gian, cải thiện cả valid lẫn test.")]));
+add(PI([t("Học chuyển giao ", { bold: true }), t("cho valid acc cao nhất (VGG16-BN) nhưng tốn tài nguyên và quá khớp nhanh; ResNet18 với lr chưa phù hợp còn kém CNN nhỏ.")]));
+add(PI([t("Valid và test không luôn cùng thứ hạng: ", { bold: true }), t("chênh lệch giữa nhiều thí nghiệm chỉ khoảng 1 điểm, nên cần nhiều seed (hoặc k-fold) để khẳng định chắc chắn; đây là giới hạn của bài vì mỗi thí nghiệm chỉ chạy với seed 42.")]));
 add(H2("7.2. Kết luận"));
 add(P(`Nhóm đã cài đặt bằng PyTorch bốn CNN của bài mẫu cùng hai mô hình học chuyển giao, thực hiện ${D.runs.length} lần chạy cho 15 thí nghiệm có kiểm soát (mỗi lần đổi một yếu tố) và quản lý toàn bộ bằng thư mục thực nghiệm, nhật ký Google Sheets có lịch sử phiên bản, GitHub và Drive. Mô hình cuối ${F.selected_key} đạt ${cite(F, "test_acc", { final: true })} accuracy trên PrivateTest (${cite(F, "test_acc_tta", { final: true })} với TTA). Hướng phát triển: kết hợp label smoothing với VGG16-BN, đóng băng các lớp đầu khi fine-tune, dùng trọng số lớp hoặc focal loss cho Disgust/Fear, chạy nhiều seed và ghép nhiều mô hình (ensemble).`));
 
@@ -370,7 +376,7 @@ add(table(["#", "Ngày giờ (VN)", "Người chạy", "Mã", "Bản", "Valid ac
 
 // ---------- tài liệu ----------
 const doc = new Document({
-  creator: "Nhóm 06", title: "BTL02 – Nhận dạng cảm xúc khuôn mặt bằng CNN",
+  creator: "Lê Châu Kỳ, Trần Thanh Huyền, Vũ Hoàng Phương, Đỗ Minh Thương", title: "BTL02 – Nhận dạng cảm xúc khuôn mặt bằng CNN",
   styles: {
     default: { document: { run: { font: FONT, size: 26 } } },
     paragraphStyles: [
@@ -387,7 +393,7 @@ const doc = new Document({
   features: { updateFields: true },
   sections: [{
     properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1134, bottom: 1134, left: 1134, right: 1134 } } },
-    footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [t("BTL02 – Nhóm 06 – Trang ", { size: 20 }), new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 20 })] })] }) },
+    footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [t("Trang ", { size: 20 }), new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 20 })] })] }) },
     children: [...cover, ...body],
   }],
 });

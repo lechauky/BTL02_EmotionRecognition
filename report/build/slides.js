@@ -18,13 +18,13 @@ const pres = new pptxgen();
 pres.layout = "LAYOUT_16x9";
 pres.theme = { headFontFace: THEME.headFontFace, bodyFontFace: THEME.bodyFontFace };
 pres.title = "BTL02 – Nhận dạng cảm xúc khuôn mặt bằng CNN";
-pres.author = "Nhóm 06";
+pres.author = "Lê Châu Kỳ, Trần Thanh Huyền, Vũ Hoàng Phương, Đỗ Minh Thương";
 const C = pres.SchemeColor;
 
 pres.defineSlideMaster({ title: "TITLE_ONLY", background: { color: C.background1 },
   objects: [{ placeholder: { options: { name: "title", type: "title", x: 0.5, y: 0.25, w: 9, h: 0.65, fontSize: 22, bold: true,
     color: C.text1, fontFace: THEME.headFontFace, valign: "middle", margin: 0 }, text: "" } },
-  { text: { text: "BTL02 · Nhóm 06 · FER2013 – CNN (PyTorch)", options: { x: 0.5, y: 5.25, w: 6, h: 0.25, fontSize: 9, color: C.text2, margin: 0 } } }],
+  { text: { text: "BTL02 · FER2013 – CNN (PyTorch)", options: { x: 0.5, y: 5.25, w: 6, h: 0.25, fontSize: 9, color: C.text2, margin: 0 } } }],
   slideNumber: { x: 9.0, y: 5.22, w: 0.5, h: 0.25, fontSize: 9, color: C.text2, align: "right" } });
 pres.defineSlideMaster({ title: "DARK", background: { color: C.text1 },
   objects: [{ placeholder: { options: { name: "title", type: "title", x: 0.6, y: 1.5, w: 8.8, h: 1.4, fontSize: 36, bold: true,
@@ -87,13 +87,13 @@ pres.addSection({ title: "Mở đầu" });
 let s = pres.addSlide({ masterName: "DARK", sectionTitle: "Mở đầu" });
 s.addText("Nhận dạng cảm xúc khuôn mặt bằng CNN", { placeholder: "title" });
 s.addText("BTL02 · Học sâu · FER2013 · PyTorch", { isTextBox: true, x: 0.6, y: 3.0, w: 8.8, h: 0.5, fontSize: 18, color: C.accent4, margin: 0 });
-s.addText("Nhóm 06 · Lê Châu Kỳ · Trần Thanh Huyền · Vũ Hoàng Phương · Đỗ Minh Thương\nGV Đỗ Như Tài · Lớp DCT123C4 · Trường Đại học Sài Gòn · 11/2026",
+s.addText("Lê Châu Kỳ · Trần Thanh Huyền · Vũ Hoàng Phương · Đỗ Minh Thương\nGV Đỗ Như Tài · Lớp DCT123C4 · Trường Đại học Sài Gòn · 11/2026",
   { isTextBox: true, x: 0.6, y: 3.7, w: 8.8, h: 0.9, fontSize: 13, color: C.background1, margin: 0 });
 
 // 2. Liên kết
 s = slide("Bốn sản phẩm liên kết, kiểm tra được với nhau", "Mở đầu");
 const cards = [["Nhật ký – Google Sheets", "Mỗi lần chạy một dòng; lịch sử phiên bản ghi ai cập nhật, lúc nào; sheet KiemTra đối chiếu số liệu.", L.sheets, C.accent1],
-  ["Báo cáo – Word / Google Docs", "Mọi bảng số liệu kèm run_id và liên kết tới thư mục thực nghiệm; phụ lục A là danh sách trích dẫn.", L.drive.replace("16lyivk-DlgbP9q31Oxg2acJtdwTRiyyV", "1rz0GDl1D-OAW24Wup3akU4sQ2PE_nhY1"), C.accent2],
+  ["Báo cáo – Word (.docx)", "Mọi bảng số liệu kèm run_id và liên kết tới thư mục thực nghiệm; phụ lục A là danh sách trích dẫn.", L.drive.replace("16lyivk-DlgbP9q31Oxg2acJtdwTRiyyV", "1rz0GDl1D-OAW24Wup3akU4sQ2PE_nhY1"), C.accent2],
   ["Mã nguồn + exps – GitHub", "config.json, meta.json, history.csv, metrics.json, hình của từng lần chạy.", L.repo, C.accent3],
   ["Trọng số – Google Drive", "exps/ đầy đủ kèm checkpoints/best.pt.", L.drive, C.accent5]];
 cards.forEach((c, i) => {

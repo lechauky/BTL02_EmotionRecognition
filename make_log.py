@@ -87,8 +87,8 @@ def sheet_guide(wb, df):
                 f"từ {len(df)} thư mục thực nghiệm trong exps/")
     ws["A2"].font = Font(name=F, size=10, italic=True)
     links = [("Kho code + exps (GitHub)", C.GITHUB_REPO), ("Trọng số (Google Drive)", C.DRIVE_WEIGHTS_URL),
-             ("Slide (Google Slides)", C.SLIDES_URL), ("Nhật ký này (Google Sheets)", C.SHEETS_URL),
-             ("Báo cáo (Google Docs)", C.REPORT_URL)]
+             ("Slide (PowerPoint)", C.SLIDES_URL), ("Nhật ký này (Google Sheets)", C.SHEETS_URL),
+             ("Báo cáo (Word)", C.REPORT_URL)]
     rows = [("Liên kết", "")] + [(a, b or "(điền sau)") for a, b in links] + [("Các sheet", "")] + [
         ("NhatKy", "Mỗi dòng là MỘT lần chạy: ngày giờ, người chạy, thí nghiệm, phiên bản, mô hình, dữ liệu, tối ưu, kết quả, "
                    "thiết bị, commit, liên kết tới thư mục thực nghiệm (GitHub) và trọng số (Drive)."),
